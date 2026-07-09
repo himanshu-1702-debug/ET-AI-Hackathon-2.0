@@ -1,0 +1,51 @@
+MAINTENANCE & INSPECTION LOG
+Equipment: Compressor B-12 (Gas Compression Unit, Zone C)
+Facility: Reference Industrial Plant
+
+--- ENTRY 1 ---
+Date: 2025-08-14
+Type: Routine Inspection
+Inspector: R. Sharma (Senior Maintenance Engineer)
+Findings: Gas pressure sensor reading intermittent fluctuation, within tolerance but noted for
+monitoring. Permit-to-work log shows hot work was conducted in adjacent Bay 3 on 2025-08-12,
+two days prior. No immediate action taken. Recommend re-inspection in 30 days.
+
+--- ENTRY 2 ---
+Date: 2025-09-02
+Type: Near-Miss Report
+Reported by: Shift Team B (Night Shift)
+Description: Gas detector in Zone C briefly alarmed during confined space entry for routine
+valve maintenance. Alarm cleared within 4 minutes; entry team evacuated as precaution per
+procedure. Permit records show confined space entry permit and hot work permit were both
+active in overlapping areas during this window. No injuries. Logged as near-miss, not incident.
+
+--- ENTRY 3 ---
+Date: 2025-10-20
+Type: Routine Inspection
+Inspector: R. Sharma
+Findings: Gas pressure sensor on Compressor B-12 again shows fluctuation pattern similar to
+August entry. Maintenance team notes this correlates with periods of adjacent hot work permits
+being active. No formal cross-check exists between permit issuance and sensor monitoring
+schedules - this was raised informally in the team WhatsApp group but not escalated further.
+
+--- ENTRY 4 ---
+Date: 2025-12-05
+Type: Near-Miss Report
+Reported by: Shift Team A (Day Shift)
+Description: Confined space entry near Compressor B-12 proceeded while a hot work permit was
+simultaneously active in Bay 3 (approx 15 meters away). Gas detector readings elevated briefly
+during entry. Entry team completed task and exited without incident. Supervisor noted verbally
+that this is "not the first time" permits have overlapped in this zone but no formal tracking
+exists.
+
+--- ENTRY 5 ---
+Date: 2026-01-18
+Type: Routine Inspection
+Inspector: P. Verma (Maintenance Engineer)
+Findings: Compressor B-12 gas pressure sensor showing consistent low-grade fluctuation across
+last three inspections (Aug, Oct, Jan). Recommend root cause investigation into whether this
+correlates with adjacent hot work / confined space permit activity patterns. Escalating to
+plant safety officer for review.
+
+Governing Standards: OISD-STD-105 (Permit to Work), OISD-GDN-178, Factory Act 1948 Chapter IV
+(Safety provisions)

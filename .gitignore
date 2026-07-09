@@ -1,0 +1,27 @@
+# Environment / secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.egg-info/
+
+# Data generated at runtime (knowledge graph, vector store, uploaded docs)
+backend/app/data/documents/*
+backend/app/data/graph_store/*
+backend/app/data/vector_store/*
+!backend/app/data/documents/.gitkeep
+!backend/app/data/graph_store/.gitkeep
+!backend/app/data/vector_store/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+audit_log.jsonl

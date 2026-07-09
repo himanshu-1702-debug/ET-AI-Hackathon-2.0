@@ -1,0 +1,29 @@
+MAINTENANCE & INSPECTION LOG
+Equipment: Pump P-204 (Feed Water Pump, Zone A)
+Facility: Reference Industrial Plant
+
+--- ENTRY 1 ---
+Date: 2025-02-11
+Type: Routine Inspection
+Inspector: D. Patel (Maintenance Engineer)
+Findings: Bearing housing temperature slightly above baseline (62C vs typical 55C). No abnormal vibration recorded. Logged for monitoring, no immediate action.
+
+--- ENTRY 2 ---
+Date: 2025-05-19
+Type: Routine Inspection
+Inspector: D. Patel
+Findings: Bearing temperature trend continues upward (65C). Vibration analysis shows early-stage bearing wear signature. Recommended bearing replacement within 90 days.
+
+--- ENTRY 3 ---
+Date: 2025-08-02
+Type: Scheduled Maintenance
+Inspector: D. Patel
+Findings: Bearing replaced on Pump P-204 per prior recommendation. Post-replacement vibration and temperature readings within normal range. Root cause noted as extended run time beyond OEM-recommended bearing service interval.
+
+--- ENTRY 4 ---
+Date: 2026-01-14
+Type: Routine Inspection
+Inspector: N. Rao (Shift Lead, standing in for Zone A rounds)
+Findings: Pump P-204 operating normally. No abnormalities noted. Next scheduled bearing inspection due 2026-08 per OEM interval.
+
+Governing Standards: OISD-STD-105, Factory Act 1948 Chapter IV

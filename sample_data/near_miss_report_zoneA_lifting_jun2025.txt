@@ -1,0 +1,15 @@
+NEAR-MISS REPORT
+Report No: NM-2025-0098
+Facility: Reference Industrial Plant, Zone A
+Date: 2025-06-18
+Reported by: Shift Team A (Day Shift), filed by D. Patel (Maintenance Engineer)
+
+Description: During a scheduled lift near Heat Exchanger HE-33 for a component
+replacement, the load shifted slightly during positioning. Rigging team halted
+the lift immediately per procedure. No injuries, no equipment damage. Lift
+resumed after re-securing rigging.
+
+Immediate Action: Lift supervisor reviewed rigging configuration with the
+team before resuming.
+
+Classification: Near-miss, lifting operations.

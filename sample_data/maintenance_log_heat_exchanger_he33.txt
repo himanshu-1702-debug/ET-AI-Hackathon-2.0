@@ -1,0 +1,23 @@
+MAINTENANCE & INSPECTION LOG
+Equipment: Heat Exchanger HE-33 (Zone A)
+Facility: Reference Industrial Plant
+
+--- ENTRY 1 ---
+Date: 2025-06-11
+Type: Routine Inspection
+Inspector: D. Patel
+Findings: Outlet temperature slightly above design specification, consistent with early-stage fouling. Cleaning scheduled for next maintenance window.
+
+--- ENTRY 2 ---
+Date: 2025-10-28
+Type: Scheduled Maintenance
+Inspector: D. Patel
+Findings: HE-33 cleaned per schedule. Outlet temperature returned to design specification.
+
+--- ENTRY 3 ---
+Date: 2026-02-15
+Type: Incident Follow-up Inspection
+Inspector: V. Menon (Safety Officer)
+Findings: Outlet temperature exceeded high-temperature alarm threshold during Feb 2026 incident (see incident report, same date). Inspection found fouling had progressed faster than the standard cleaning interval assumes. Recommend shortening cleaning interval for HE-33 specifically, rather than applying the plant-wide default schedule.
+
+Governing Standards: OISD-STD-105, Factory Act 1948 Chapter IV

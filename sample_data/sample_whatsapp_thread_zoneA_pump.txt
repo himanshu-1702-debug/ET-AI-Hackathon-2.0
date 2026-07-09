@@ -1,0 +1,9 @@
+[Zone A Maintenance Team - WhatsApp Group]
+
+D. Patel: P-204 bearing temp creeping up again, similar to what we saw before the last replacement
+S. Iyer: is it past the OEM interval already or still within range
+D. Patel: technically still within range but the trend looks the same as last time, would rather catch it early
+S. Iyer: fair, log it and let's plan the replacement before it becomes urgent
+D. Patel: will do, also HE-33 outlet temp is creeping too, might be fouling again ahead of the scheduled cleaning
+S. Iyer: makes sense given how fast it fouled last time, maybe HE-33 just needs a shorter interval than the standard one
+D. Patel: yeah that's basically what V. Menon said after the Feb incident too, we should probably just change it officially

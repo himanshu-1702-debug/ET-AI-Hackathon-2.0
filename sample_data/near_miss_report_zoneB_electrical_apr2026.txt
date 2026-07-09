@@ -1,0 +1,16 @@
+NEAR-MISS REPORT
+Report No: NM-2026-0033
+Facility: Reference Industrial Plant, Zone B
+Date: 2026-04-09
+Reported by: Shift Team A (Day Shift), filed by N. Rao (Shift Lead)
+
+Description: During electrical isolation work near Storage Tank ST-7 (Permit
+EIP-2026-0012), a technician found that a secondary circuit had not been
+included in the original isolation scope, though it was carrying live current
+in proximity to the work area. Work was paused immediately once identified.
+No contact occurred, no injuries.
+
+Immediate Action: Isolation scope corrected and re-verified before work
+resumed. Permit amended.
+
+Classification: Near-miss, electrical isolation scope gap.

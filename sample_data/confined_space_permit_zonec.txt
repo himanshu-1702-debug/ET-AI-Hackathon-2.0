@@ -1,0 +1,28 @@
+CONFINED SPACE ENTRY PERMIT
+Permit No: CSP-2026-0118
+Facility: Reference Industrial Plant, Zone C
+
+Date Issued: 2026-01-15
+Valid From: 2026-01-15 09:00 To: 2026-01-15 13:00
+
+Task Description: Routine valve maintenance inside Compressor B-12 housing, Zone C.
+Entry Supervisor: A. Nair
+
+Atmospheric Testing:
+- Oxygen level at entry: 20.8% (acceptable)
+- LEL (Lower Explosive Limit) at entry: 2% (acceptable, below 10% threshold)
+- H2S: Not detected
+
+Entrants: 2 (M. Joshi, T. Kumar)
+Attendant: A. Nair (stationed at entry point)
+Rescue Plan: Standard retrieval line, on-site rescue team on standby
+
+Note from Entry Supervisor: "Gas detector showed brief elevated reading around 10:15, cleared
+within minutes. Noted verbally to shift lead. Continued work per procedure since readings
+returned to acceptable range."
+
+Cross-reference check with active Hot Work Permits in adjacent bays: NOT PERFORMED AT TIME OF
+ISSUANCE. This permit (09:00-13:00) overlaps with Hot Work Permit HWP-2026-0347 (08:00-18:00,
+Bay 3, approx. 15 meters away) for the full duration of confined space entry.
+
+Governing Standard: Factory Act 1948 Chapter IV (Safety), OISD-STD-105

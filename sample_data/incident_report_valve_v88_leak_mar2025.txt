@@ -1,0 +1,15 @@
+NEAR-MISS REPORT
+Report No: NM-2025-0041
+Facility: Reference Industrial Plant, Zone B
+Date: 2025-03-04
+Reported by: Shift Team B (Night Shift), filed by N. Rao (Shift Lead)
+
+Description: During routine rounds, operator noticed minor seepage at the seal
+interface of Valve V-88 (pressure relief valve, adjacent to Storage Tank ST-7).
+No release beyond the immediate seal area. Area isolated, maintenance notified.
+No injuries, no product loss beyond trace seepage.
+
+Immediate Action: Maintenance team dispatched, seal inspected and scheduled for
+replacement (see maintenance log entry 2025-03-06).
+
+Classification: Near-miss, mechanical seal degradation.
