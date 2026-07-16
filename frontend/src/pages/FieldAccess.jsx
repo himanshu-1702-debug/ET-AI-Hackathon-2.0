@@ -96,12 +96,6 @@ export default function FieldAccess() {
           </div>
         </div>
       </div>
-
-      <p style={{ textAlign: 'center', fontSize: 11.5, color: 'var(--text-faint)', marginTop: 16, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
-        {twilioConfigured
-          ? 'This screen is a UI preview. Real WhatsApp messages sent to your Twilio number are answered by the same backend independently of this screen — try messaging it directly from a phone.'
-          : 'This is a WhatsApp-style preview connected to the same Copilot backend as the dashboard.'}
-      </p>
     </div>
   );
 }
