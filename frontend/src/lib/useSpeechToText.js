@@ -3,7 +3,7 @@ import { useState, useRef, useCallback } from 'react';
 export function useSpeechToText(onResult) {
   const [listening, setListening] = useState(false);
   const [supported] = useState(
-    typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition)
+    () => typeof window !== 'undefined' && !!(window.SpeechRecognition || window.webkitSpeechRecognition)
   );
   const recognitionRef = useRef(null);
 
