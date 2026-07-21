@@ -77,6 +77,10 @@ export const api = {
   tacitFinalize: (expertiseArea, conversationHistory) =>
     post('/tacit-capture/finalize', { expertise_area: expertiseArea, conversation_history: conversationHistory }),
 
+  getConversation: (screen) => get(`/conversations/${screen}`),
+  appendConversationMessage: (screen, message) => post(`/conversations/${screen}`, message),
+  clearConversation: (screen) => fetch(`${BASE}/conversations/${screen}`, { method: 'DELETE', headers: { ...authHeader() } }).then((r) => r.json()),
+
   getAuditRecent: (limit = 100, feature = null) =>
     get(`/audit/recent?limit=${limit}${feature ? `&feature=${feature}` : ''}`),
 

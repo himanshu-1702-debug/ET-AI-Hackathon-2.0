@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { api } from '../lib/api';
-import { PageHeader } from '../components/ui';
+import { useSpeechToText } from '../lib/useSpeechToText';
+import { PageHeader, MicButton } from '../components/ui';
 
 export default function FieldAccess() {
   const [messages, setMessages] = useState([
@@ -9,26 +10,44 @@ export default function FieldAccess() {
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
   const [twilioConfigured, setTwilioConfigured] = useState(null);
+  const [historyLoaded, setHistoryLoaded] = useState(false);
   const scrollRef = useRef(null);
+
+  const { listening, supported, start, stop } = useSpeechToText((transcript) => {
+    setText((prev) => (prev ? prev + ' ' + transcript : transcript));
+  });
 
   useEffect(() => {
     api.whatsappStatus().then((r) => setTwilioConfigured(r.configured)).catch(() => setTwilioConfigured(false));
+    api.getConversation('field_access').then((res) => {
+      if (res.messages && res.messages.length > 0) setMessages(res.messages);
+    }).catch(() => {}).finally(() => setHistoryLoaded(true));
   }, []);
 
   useEffect(() => { scrollRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages]);
 
+  async function persist(message) {
+    try { await api.appendConversationMessage('field_access', message); } catch { /* best effort */ }
+  }
+
   async function handleSend() {
     if (!text.trim()) return;
     const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    setMessages((m) => [...m, { role: 'me', content: text, time: now }]);
+    const userMessage = { role: 'me', content: text, time: now };
+    setMessages((m) => [...m, userMessage]);
+    persist(userMessage);
     const q = text;
     setText('');
     setLoading(true);
     try {
       const res = await api.askCopilot(q, 'en');
-      setMessages((m) => [...m, { role: 'them', content: res.answer, time: now, confidence: res.confidence }]);
+      const replyMessage = { role: 'them', content: res.answer, time: now, confidence: res.confidence };
+      setMessages((m) => [...m, replyMessage]);
+      persist(replyMessage);
     } catch {
-      setMessages((m) => [...m, { role: 'them', content: "Sorry, I couldn't reach the knowledge base right now.", time: now }]);
+      const errMessage = { role: 'them', content: "Sorry, I couldn't reach the knowledge base right now.", time: now };
+      setMessages((m) => [...m, errMessage]);
+      persist(errMessage);
     } finally { setLoading(false); }
   }
 
@@ -89,6 +108,7 @@ export default function FieldAccess() {
               placeholder="Message"
               style={{ flex: 1, background: '#2A3942', border: 'none', borderRadius: 20, padding: '10px 14px', color: '#fff', fontSize: 13 }}
             />
+            <MicButton listening={listening} supported={supported} onStart={start} onStop={stop} />
             <button onClick={handleSend} disabled={loading} style={{
               width: 38, height: 38, borderRadius: '50%', background: '#00A884', border: 'none',
               color: '#fff', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center',

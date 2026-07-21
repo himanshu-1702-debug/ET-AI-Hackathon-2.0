@@ -19,10 +19,12 @@ cause analysis, and proactive pattern discovery on top.
   visible from any single report.
 - Routes findings to the right role automatically.
 - Captures undocumented knowledge from experienced staff through a guided
-  interview.
+  interview, with voice input as an alternative to typing.
 - Supports Hindi, Marathi, and Tamil alongside English.
 - Provides a mobile-friendly, WhatsApp-style access point for field staff,
   alongside the full dashboard for desk-based roles.
+- Keeps every conversation saved permanently per account, so nothing is
+  lost between sessions.
 - Logs every AI action with its sources and confidence for auditability.
 
 ## Stack

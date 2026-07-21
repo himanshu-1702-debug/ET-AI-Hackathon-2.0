@@ -88,10 +88,54 @@ at startup.
 
 ## 8. Load sample documents
 
-Go to the Document Ingestion screen and upload the files from
-`sample_data/`, matching the doc type listed in `sample_data/README.md`
-for each one. This populates the knowledge graph so the Copilot,
-Compliance, and RCA screens have something real to work with.
+You don't need to do this manually anymore — the backend automatically
+loads the full `sample_data/` corpus the first time it starts with a valid
+API key in place. This only happens once; if the knowledge graph already
+has data in it, startup skips seeding and starts normally. Give it a minute
+or two on that very first run, since it's running real extraction on ~19
+documents before the server finishes starting up.
+
+If you want to reload the sample data from scratch, use the "Reset demo
+data" button (visible when logged in as Plant Manager) and restart the
+backend — seeding will run again since the graph will be empty.
+
+## About the demo_uploads folder
+
+Separate from `sample_data/`, there's a `demo_uploads/` folder with 3 files
+meant for live demonstration once the app is already running with the
+seeded data loaded — a PDF permit, a PDF maintenance log, and a P&ID-style
+image. See `demo_uploads/README.md` for what each one demonstrates and a
+suggested order.
+
+## About chat history
+
+Every conversation — Copilot, the tacit knowledge interview, and Field
+Access — is saved permanently per logged-in account. Logging out and back
+in, switching between tabs, or closing and reopening the browser won't lose
+it. Each account only sees its own conversations, not other roles'.
+
+## About voice input
+
+Wherever you see a microphone icon next to a text input, you can speak
+instead of typing. This uses Chrome's built-in speech recognition, which
+works in Chrome and Chrome-based browsers (Edge, Brave) but not all
+browsers support it — the mic icon simply won't appear if it's unsupported.
+Note that despite being "built into the browser," this feature does send
+audio to Google's servers for transcription in the background, so it needs
+an internet connection to work, same as everything else here.
+
+## If data seems to disappear between sessions
+
+The reset button is the only thing in the app that intentionally clears
+data, and it always asks for confirmation first. If documents you uploaded
+seem to have vanished, the most likely explanation is that a fresh copy of
+the project was extracted or downloaded over the old one — since the
+project ships with an empty data folder by default, extracting a new copy
+starts fresh rather than carrying over what you'd previously ingested.
+Auto-seeding means it'll no longer look empty in that case, but anything
+you'd added manually beyond the seeded set would need re-uploading. Keep
+working from the same extracted folder rather than re-extracting a fresh
+copy each time, and this won't come up.
 
 ## 9. Try it out
 

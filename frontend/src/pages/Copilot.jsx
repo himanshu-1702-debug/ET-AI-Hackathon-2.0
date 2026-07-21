@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { api, isBackendError } from '../lib/api';
-import { PageHeader, ConfidenceBar, EscalationBadge, CitationList, Spinner, ErrorBanner, EmptyState } from '../components/ui';
+import { useAuth } from '../lib/AuthContext';
+import { useSpeechToText } from '../lib/useSpeechToText';
+import { PageHeader, ConfidenceBar, EscalationBadge, CitationList, Spinner, ErrorBanner, EmptyState, MicButton } from '../components/ui';
 
 const LANGUAGES = [
   { value: 'en', label: 'English' },
@@ -10,27 +12,50 @@ const LANGUAGES = [
 ];
 
 export default function Copilot() {
+  const { user } = useAuth();
   const [messages, setMessages] = useState([]);
   const [question, setQuestion] = useState('');
   const [language, setLanguage] = useState('en');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [historyLoaded, setHistoryLoaded] = useState(false);
   const scrollRef = useRef(null);
 
+  useEffect(() => {
+    api.getConversation('copilot')
+      .then((res) => setMessages(res.messages || []))
+      .catch(() => {})
+      .finally(() => setHistoryLoaded(true));
+  }, []);
+
   useEffect(() => { scrollRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages]);
+
+  const { listening, supported, start, stop } = useSpeechToText((transcript) => {
+    setQuestion((prev) => (prev ? prev + ' ' + transcript : transcript));
+  });
+
+  async function persist(message) {
+    try { await api.appendConversationMessage('copilot', message); } catch { /* history save is best-effort */ }
+  }
 
   async function handleAsk() {
     if (!question.trim()) return;
     const q = question;
-    setMessages((m) => [...m, { role: 'user', content: q }]);
+    const userMessage = { role: 'user', content: q };
+    setMessages((m) => [...m, userMessage]);
+    persist(userMessage);
     setQuestion('');
     setLoading(true); setError(null);
     try {
       const res = await api.askCopilot(q, language);
-      setMessages((m) => [...m, { role: 'assistant', data: res }]);
+      const assistantMessage = { role: 'assistant', content: '', data: res };
+      setMessages((m) => [...m, assistantMessage]);
+      persist(assistantMessage);
     } catch (e) {
       if (isBackendError(e)) setError(e);
-      setMessages((m) => [...m, { role: 'error', content: 'Could not get a response.' }]);
+      const errMessage = { role: 'error', content: 'Could not get a response.' };
+      setMessages((m) => [...m, errMessage]);
+      persist(errMessage);
     } finally { setLoading(false); }
   }
 
@@ -45,7 +70,7 @@ export default function Copilot() {
 
       <div className="bracket-panel" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', padding: 0 }}>
         <div style={{ flex: 1, overflowY: 'auto', padding: 20 }}>
-          {messages.length === 0 && (
+          {historyLoaded && messages.length === 0 && (
             <EmptyState
               eyebrow="No queries yet"
               title="Try a benchmark question"
@@ -70,6 +95,7 @@ export default function Copilot() {
             onChange={(e) => setQuestion(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleAsk()}
           />
+          <MicButton listening={listening} supported={supported} onStart={start} onStop={stop} />
           <button className="btn btn-primary" onClick={handleAsk} disabled={loading || !question.trim()}>Ask</button>
         </div>
       </div>
@@ -91,6 +117,7 @@ function MessageBubble({ message }) {
     return <div style={{ color: 'var(--signal-red)', fontSize: 13, marginBottom: 14 }}>{message.content}</div>;
   }
   const d = message.data;
+  if (!d) return null;
   return (
     <div style={{ marginBottom: 20, maxWidth: '90%' }}>
       <div style={{ background: 'var(--ink)', border: '1px solid var(--line)', borderRadius: '10px 10px 10px 2px', padding: '14px 16px' }}>

@@ -51,3 +51,10 @@ class TacitNextQuestionRequest(BaseModel):
 class TacitFinalizeRequest(BaseModel):
     expertise_area: str
     conversation_history: list[TacitInterviewMessage] = []
+
+
+class ConversationMessage(BaseModel):
+    role: str
+    content: str
+    data: Optional[dict] = None
+    time: Optional[str] = None

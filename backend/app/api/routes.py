@@ -17,7 +17,9 @@ from app.services import ingestion, copilot, compliance, rca, lessons_learned, r
 from app.services import knowledge_graph as kg
 from app.services import vector_store as vs
 from app.services import job_queue
+from app.services import conversations
 from app.services.audit import get_recent_events, get_escalated_events
+from app.models.schemas import ConversationMessage
 from fastapi import Request
 from fastapi.responses import PlainTextResponse
 
@@ -261,3 +263,20 @@ def graph_entity(entity_id: str, max_hops: int = 2):
 @router.get("/graph/search")
 def graph_search(q: str):
     return {"results": kg.search_nodes_by_label(q)}
+
+
+@router.get("/conversations/{screen}")
+def get_conversation(screen: str, user: dict = Depends(verify_token)):
+    return {"screen": screen, "messages": conversations.get_history(user["sub"], screen)}
+
+
+@router.post("/conversations/{screen}")
+def append_conversation_message(screen: str, message: ConversationMessage, user: dict = Depends(verify_token)):
+    history = conversations.append_message(user["sub"], screen, message.model_dump())
+    return {"screen": screen, "messages": history}
+
+
+@router.delete("/conversations/{screen}")
+def clear_conversation(screen: str, user: dict = Depends(verify_token)):
+    conversations.clear_history(user["sub"], screen)
+    return {"cleared": True}

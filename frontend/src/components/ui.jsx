@@ -86,3 +86,23 @@ export function ErrorBanner({ error }) {
     </div>
   );
 }
+
+export function MicButton({ listening, supported, onStart, onStop }) {
+  if (!supported) return null;
+  return (
+    <button
+      type="button"
+      onClick={listening ? onStop : onStart}
+      title={listening ? 'Stop recording' : 'Speak instead of typing'}
+      style={{
+        width: 38, height: 38, borderRadius: '50%', border: '1px solid var(--line-bright)',
+        background: listening ? 'var(--signal-red)' : 'var(--panel-raised)',
+        color: listening ? '#fff' : 'var(--text-muted)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        fontSize: 16, flexShrink: 0, animation: listening ? 'pulse-node 1s ease-in-out infinite' : 'none',
+      }}
+    >
+      {listening ? '●' : '🎤'}
+    </button>
+  );
+}

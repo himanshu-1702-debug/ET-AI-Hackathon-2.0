@@ -14,9 +14,12 @@ venv/
 backend/app/data/documents/*
 backend/app/data/graph_store/*
 backend/app/data/vector_store/*
+backend/app/data/conversations/*
 !backend/app/data/documents/.gitkeep
 !backend/app/data/graph_store/.gitkeep
 !backend/app/data/vector_store/.gitkeep
+backend/app/data/jobs.json
+backend/app/data/routed_findings.json
 
 # OS
 .DS_Store
