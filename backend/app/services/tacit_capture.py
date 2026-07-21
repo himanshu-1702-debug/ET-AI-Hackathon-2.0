@@ -75,6 +75,7 @@ def finalize_capture(expertise_area: str, conversation_history: list[dict]) -> d
         try:
             vs.add_chunks(session_id, chunk_texts, metadatas)
         except Exception as e:
+            print(f"Vector store write failed for tacit capture session {session_id}: {e}")
             log_event(feature="tacit_capture", action="vector_store_write_failed",
                       detail={"session_id": session_id, "error": str(e)[:300]}, escalated=True)
 

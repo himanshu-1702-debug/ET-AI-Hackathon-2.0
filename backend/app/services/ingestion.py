@@ -105,6 +105,9 @@ def ingest_document(file_path, doc_type: str, original_filename: str) -> dict:
     try:
         vs.add_chunks(doc_id, chunks, metadatas)
     except Exception as e:
+        import traceback
+        print(f"Vector store write failed for {original_filename}: {e}")
+        traceback.print_exc()
         log_event(feature="ingestion", action="vector_store_write_failed",
                   detail={"doc_id": doc_id, "error": str(e)[:300]}, escalated=True)
 
@@ -231,6 +234,7 @@ def ingest_thread(text: str, source_label: str = "whatsapp_thread") -> dict:
         try:
             vs.add_chunks(doc_id, chunk_texts, metadatas)
         except Exception as e:
+            print(f"Vector store write failed for thread {source_label}: {e}")
             log_event(feature="thread_mining", action="vector_store_write_failed",
                       detail={"doc_id": doc_id, "error": str(e)[:300]}, escalated=True)
 
