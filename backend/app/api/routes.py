@@ -55,10 +55,14 @@ def _handle_llm_errors(fn, *args, **kwargs):
 
 @router.get("/status")
 def status():
+    try:
+        chunk_count = vs.count()
+    except Exception:
+        chunk_count = None
     return {
         "llm_configured": settings.has_valid_key,
         "graph_summary": kg.get_full_graph_summary(),
-        "vector_store_chunk_count": vs.count(),
+        "vector_store_chunk_count": chunk_count,
     }
 
 
@@ -221,7 +225,12 @@ async def whatsapp_webhook(request: Request):
 def reset_system(user: dict = Depends(require_permission("system:reset"))):
     from app.services import vector_store as vs_module
 
-    vs_module.reset()
+    try:
+        vs_module.reset()
+    except Exception:
+        chroma_file = settings.VECTOR_STORE_DIR / "chroma.sqlite3"
+        if chroma_file.exists():
+            chroma_file.unlink()
     kg.reset()
 
     if settings.DOCUMENTS_DIR.exists():
