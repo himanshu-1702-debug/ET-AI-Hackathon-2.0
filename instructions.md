@@ -18,14 +18,34 @@ project is written to stand on its own without it.
 If credit runs low later, just add more on the same page — the key itself
 doesn't need to change.
 
-## 2. Install backend dependencies
+## 2. Set up a virtual environment and install backend dependencies
+
+A virtual environment keeps this project's exact package versions isolated
+from anything else installed on your machine — this prevents version
+conflicts and dependency mismatches down the line.
 
 ```
 cd backend
-pip install -r requirements.txt --break-system-packages
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
-Drop `--break-system-packages` if you're using a virtual environment.
+On Mac/Linux, activate with `source venv/bin/activate` instead.
+
+You should see `(venv)` at the start of your terminal prompt once it's
+active. **Every time you open a new terminal to run the backend, activate
+the virtual environment first** before running uvicorn:
+
+```
+cd backend
+venv\Scripts\activate
+uvicorn app.main:app --reload --port 8000
+```
+
+Whenever you receive an updated copy of this project, reactivate the
+virtual environment and run `pip install -r requirements.txt` again to
+pick up any dependency changes.
 
 ## 3. Add your API key
 
@@ -42,6 +62,10 @@ ANTHROPIC_API_KEY=sk-ant-your-actual-key-here
 Save the file. Never commit `.env` — it's already excluded by `.gitignore`.
 
 ## 4. Run the backend
+
+Make sure your virtual environment is activated (you should see `(venv)`
+in your prompt — if not, run `venv\Scripts\activate` from the `backend`
+folder first), then:
 
 ```
 uvicorn app.main:app --reload --port 8000
@@ -201,8 +225,14 @@ to `backend/.env` first, as in step 3.
 
 - Red status dot — key missing or wrong in `.env`, or the backend wasn't
   restarted after editing it.
-- `pip install` errors — make sure `--break-system-packages` is included
-  exactly as shown, if your system requires it.
+- Errors mentioning a package version mismatch (for example, a `KeyError`
+  coming from inside the `chromadb` package) — usually means the virtual
+  environment isn't activated, or dependencies weren't reinstalled after an
+  update. Activate the venv and run `pip install -r requirements.txt`
+  again. If it persists, delete the contents of
+  `backend/app/data/vector_store/` and restart — this rebuilds it fresh
+  against whatever version is currently installed, without affecting the
+  knowledge graph.
 - Port already in use — something else is using 8000 or 5173; close it or
   change the port in the run command.
 - More troubleshooting notes are in `docs/OPERATIONS.md`.
