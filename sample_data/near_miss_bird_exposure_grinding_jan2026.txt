@@ -1,0 +1,13 @@
+NEAR-MISS REPORT
+Report No: NM-2026-0009
+Facility: Reference Spice Plant, Grinding Department
+Date: 2026-01-15
+Reported by: Grinding Shift Team, filed by V. Nair (Quality Control Manager)
+
+Description: Pigeon activity again observed near the open grinding floor, same general area reported in May 2025 (NM-2025-0067). This time, droppings were found on a pallet of unsorted material staged near the New Lithotech Grinder, requiring the affected material to be quarantined and inspected before release.
+
+Immediate Action: Affected pallet quarantined pending QC review. Recommend a physical barrier or netting solution at the open areas near grinding, since this is the second documented incident and the first with direct material contact.
+
+Note from reporting officer: The exposure point has been known since May 2025. This occurrence resulted in direct material contact, which the earlier report did not, indicating the risk has materialised rather than remaining theoretical.
+
+Classification: Near-miss, food safety / GMP — bird exposure, recurring, escalated severity.

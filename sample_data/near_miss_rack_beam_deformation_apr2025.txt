@@ -1,0 +1,11 @@
+NEAR-MISS REPORT
+Report No: NM-2025-0031
+Facility: Reference Spice Plant, Storage Department
+Date: 2025-04-11
+Reported by: Storage Shift Team, filed by S. Krishnan (Storage Shift Supervisor)
+
+Description: During routine rounds, minor beam deflection was noticed on upper-level racking in the raw material storage bay. No pallet fall, no injury. Maintenance notified for inspection.
+
+Immediate Action: Logged for maintenance follow-up (see maintenance log entry 2025-04-11).
+
+Classification: Near-miss, structural — racking system.

@@ -34,7 +34,7 @@ export default function Onboarding() {
           </div>
           <div>
             <label className="label">Assigned area / equipment</label>
-            <input className="input" value={area} onChange={(e) => setArea(e.target.value)} placeholder="e.g. Zone C Compressors" />
+            <input className="input" value={area} onChange={(e) => setArea(e.target.value)} placeholder="e.g. Grinding Department" />
           </div>
         </div>
         <button className="btn btn-primary" onClick={handleGenerate} disabled={loading || !role.trim() || !area.trim()}>

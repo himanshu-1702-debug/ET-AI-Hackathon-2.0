@@ -1,0 +1,23 @@
+MAINTENANCE & INSPECTION LOG
+Equipment: Sprinkler Packing Line 4 (Packaging Department)
+Facility: Reference Spice Plant
+
+--- ENTRY 1 ---
+Date: 2025-07-09
+Type: Routine Inspection
+Inspector: P. Joshi (Packaging Line Supervisor)
+Findings: Gap noted between the fill and cap stations where product is briefly open to the surrounding air, by design of the current line layout. No physical barrier exists at this section. No immediate mechanical fault found.
+
+--- ENTRY 2 ---
+Date: 2025-10-25
+Type: Near-Miss Follow-up Inspection
+Inspector: V. Nair (Quality Control Manager)
+Findings: Insects observed near the open fill-to-cap gap during a routine QC walk-through, same section noted in July. No confirmed product contamination, but the exposure window is a repeat concern rather than a one-time observation.
+
+--- ENTRY 3 ---
+Date: 2026-01-30
+Type: Routine Inspection
+Inspector: P. Joshi
+Findings: Same open gap between fill and cap stations remains unaddressed. Recommend evaluating a physical barrier or enclosure for this section rather than relying on ambient conditions, since this is the second documented concern at the same point on the line.
+
+Governing Standards: FSSAI hygiene and food safety regulations, Spice Board of India quality standards

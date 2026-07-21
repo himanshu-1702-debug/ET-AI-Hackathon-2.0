@@ -1,0 +1,13 @@
+NEAR-MISS REPORT
+Report No: NM-2026-0041
+Facility: Reference Spice Plant, Grinding Department
+Date: 2026-03-11
+Reported by: Grinding Shift Team, filed by A. Deshmukh (Plant Safety Officer)
+
+Description: Dust accumulation again observed at the UPZ Line feeding point, same location flagged in June 2025 (NM-2025-0089). On this occasion, a maintenance technician was preparing to carry out a minor grinder adjustment nearby using a hand tool capable of generating sparks, before the dust accumulation was noticed and the work was paused.
+
+Immediate Action: Work paused, area cleared of dust accumulation before maintenance resumed. Ventilation review recommended in June 2025 does not appear to have been completed.
+
+Note from reporting officer: This is the second documented dust accumulation at the same feeding point, and the first where a potential ignition source was present nearby before the hazard was identified. The ventilation review flagged nine months ago should be treated as overdue rather than optional.
+
+Classification: Near-miss, combustible dust accumulation with nearby ignition source — grinding feed point, recurring, escalated severity.

@@ -53,7 +53,7 @@ export default function Copilot() {
       persist(assistantMessage);
     } catch (e) {
       if (isBackendError(e)) setError(e);
-      const errMessage = { role: 'error', content: 'Could not get a response.' };
+      const errMessage = { role: 'error', content: isBackendError(e) ? (e.detail || 'Could not get a response.') : 'Could not reach the server. Check that the backend is running.' };
       setMessages((m) => [...m, errMessage]);
       persist(errMessage);
     } finally { setLoading(false); }
@@ -74,7 +74,7 @@ export default function Copilot() {
             <EmptyState
               eyebrow="No queries yet"
               title="Try a benchmark question"
-              description='e.g. "Was there any overlap between hot work and confined space permits near Compressor B-12 in January?"'
+              description='e.g. "Was there any overlap between hot work and confined space permits in the Grinding Department in February 2026?"'
             />
           )}
           {messages.map((m, i) => (

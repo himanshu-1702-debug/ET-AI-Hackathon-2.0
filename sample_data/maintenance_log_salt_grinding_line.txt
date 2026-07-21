@@ -1,0 +1,23 @@
+MAINTENANCE & INSPECTION LOG
+Equipment: Salt Grinding Line (Grinding Department)
+Facility: Reference Spice Plant
+
+--- ENTRY 1 ---
+Date: 2025-05-14
+Type: Routine Inspection
+Inspector: M. Reddy (Grinding Section Engineer)
+Findings: Salt Grinding Line continues to run at full capacity with no buffer stock at the feed end. Motor bearing temperature slightly above baseline, consistent with continuous operation. No storage buffer exists near the line, requiring frequent forklift movement across the grinding floor to resupply salt stock.
+
+--- ENTRY 2 ---
+Date: 2025-09-30
+Type: Routine Inspection
+Inspector: M. Reddy
+Findings: Bearing wear on the main drive motor has progressed since May, consistent with continuous full-capacity operation without scheduled downtime. Cross-traffic from forklifts resupplying salt stock remains frequent during peak hours, sharing the same aisle as pedestrian movement near the CW Grinding Line.
+
+--- ENTRY 3 ---
+Date: 2026-01-22
+Type: Scheduled Maintenance
+Inspector: M. Reddy
+Findings: Main drive motor bearing replaced. Root cause noted as sustained full-capacity operation with no scheduled rest interval, since the line has no buffer capacity to allow planned downtime without halting salt supply to downstream packaging.
+
+Governing Standards: Factories Act 1948 Chapter IV

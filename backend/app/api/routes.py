@@ -1,12 +1,13 @@
 import shutil
 import uuid
+import traceback
 from pathlib import Path
 
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Depends
 from pydantic import BaseModel
 
 from app.core.config import settings
-from app.core.llm import LLMNotConfiguredError
+from app.core.llm import LLMNotConfiguredError, LLMRetryExhaustedError
 from app.core.auth import authenticate, verify_token, require_role, require_permission
 from app.models.schemas import (
     QueryRequest, ThreadIngestRequest, ComplianceCheckRequest, EvidencePackageRequest,
@@ -18,7 +19,7 @@ from app.services import knowledge_graph as kg
 from app.services import vector_store as vs
 from app.services import job_queue
 from app.services import conversations
-from app.services.audit import get_recent_events, get_escalated_events
+from app.services.audit import get_recent_events, get_escalated_events, log_event
 from app.models.schemas import ConversationMessage
 from fastapi import Request
 from fastapi.responses import PlainTextResponse
@@ -51,6 +52,18 @@ def _handle_llm_errors(fn, *args, **kwargs):
         return fn(*args, **kwargs)
     except LLMNotConfiguredError as e:
         raise HTTPException(status_code=503, detail=str(e))
+    except LLMRetryExhaustedError as e:
+        log_event(feature="api_error", action="retry_exhausted", detail={"error": str(e)[:300]}, escalated=True)
+        raise HTTPException(status_code=502, detail="The AI service didn't respond after several attempts. Please try again in a moment.")
+    except HTTPException:
+        raise
+    except Exception as e:
+        fn_name = getattr(fn, "__name__", str(fn))
+        print(f"Unhandled error in {fn_name}: {e}")
+        traceback.print_exc()
+        log_event(feature="api_error", action="unhandled_exception",
+                  detail={"function": fn_name, "error": str(e)[:300]}, escalated=True)
+        raise HTTPException(status_code=500, detail=f"Something went wrong processing this request: {str(e)[:200]}")
 
 
 @router.get("/status")

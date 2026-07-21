@@ -1,0 +1,17 @@
+ELECTRICAL ISOLATION PERMIT
+Permit No: EIP-2025-0038
+Facility: Reference Spice Plant, Packaging Department
+
+Date Issued: 2025-11-19
+Valid From: 2025-11-19 08:00 To: 2025-11-19 17:00
+
+Work Description: Isolation of drive motor circuit for repair on Sprinkler Packing Line 4, fill-to-cap section.
+Isolating Officer: P. Joshi (Packaging Line Supervisor)
+
+Isolation Scope: Drive motor circuit for the fill-to-cap conveyor section.
+
+Verification: Isolation tested and confirmed before work began.
+
+Authorized by: A. Deshmukh, Plant Safety Officer
+
+Governing Standard: Factories Act 1948 Chapter IV

@@ -28,7 +28,7 @@ export default function LessonsLearned() {
         <label className="label">Focus area (optional — leave blank for a broad scan)</label>
         <div style={{ display: 'flex', gap: 8 }}>
           <input className="input" value={focusArea} onChange={(e) => setFocusArea(e.target.value)}
-            placeholder="e.g. Zone C permits" onKeyDown={(e) => e.key === 'Enter' && handleScan()} />
+            placeholder="e.g. Grinding Department" onKeyDown={(e) => e.key === 'Enter' && handleScan()} />
           <button className="btn btn-primary" onClick={handleScan} disabled={loading}>
             {loading ? 'Scanning…' : 'Scan for Patterns'}
           </button>

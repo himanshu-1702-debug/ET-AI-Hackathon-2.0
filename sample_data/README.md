@@ -1,51 +1,49 @@
 # Sample Data
 
-A corpus of plant records spanning roughly 18 months (early 2025 through
-mid-2026) across four zones and six pieces of equipment, with a consistent
-set of personnel and equipment IDs throughout so the knowledge graph forms
-real, connected relationships rather than isolated mentions.
+A corpus of plant records spanning roughly a year (April 2025 through July
+2026) across the four core departments of a spice processing and packaging
+plant, with a consistent set of personnel and equipment names throughout so
+the knowledge graph forms real, connected relationships rather than
+isolated mentions.
 
-## Equipment and zones
+## Departments and equipment
 
-| Equipment | Zone |
+| Department | Equipment / Areas |
 |---|---|
-| Compressor B-12 | Zone C |
-| Pump P-204 | Zone A |
-| Heat Exchanger HE-33 | Zone A |
-| Valve V-88 | Zone B |
-| Storage Tank ST-7 | Zone B |
-| Turbine T-15 | Zone D |
+| Storage | Rack Storage System, Unloading Bay 2, Hing storage silo |
+| Processing | Roaster Unit 1, Ghan Preparation Station |
+| Grinding | Salt Grinding Line, CW Grinding Line, New/Old Lithotech Grinders, UPZ Line, shared Goods Lift |
+| Packaging | Sprinkler Packing Line 4 |
 
 ## Personnel
 
-R. Sharma and P. Verma (maintenance engineers, Zone C), D. Patel
-(maintenance engineer, Zone A), N. Rao (shift lead, Zone B), V. Menon
-(safety officer, plant-wide), A. Nair (entry supervisor), K. Reddy (fire
-watch), S. Iyer (shift supervisor).
+S. Krishnan (Storage Shift Supervisor), M. Reddy (Grinding Section
+Engineer), P. Joshi (Packaging Line Supervisor), V. Nair (Quality Control
+Manager), K. Verma (Maintenance Engineer), A. Deshmukh (Plant Safety
+Officer), R. Pillai (Storage Operator), T. Menon (Grinding Operator).
 
 ## Recurring patterns (for testing RCA and Lessons Learned)
 
-- **Valve V-88 seal seepage** — recurs three times (Mar 2025, Nov 2025, Apr
-  2026) at the same seal interface. The second report explicitly notes it
-  as a pattern; a proper RCA or pattern scan should surface this as
-  systemic rather than isolated.
-- **Compressor B-12 sensor fluctuation correlated with permit overlap** —
-  the original pattern, recurring across three inspections.
-- **Turbine T-15 startup vibration** — recurs twice (Sep 2025, Feb 2026)
-  with the second entry recommending an engineering review rather than
-  continued monitoring.
-- **Heat Exchanger HE-33 fouling** — progresses faster than the standard
-  cleaning interval, surfacing in both a maintenance log and a separate
-  incident report.
+- **Rack beam deformation, Storage Department** — recurs across April 2025
+  and December 2025 inspections at the same racking section, with an
+  informal floor-stacking workaround masking rather than resolving it.
+- **Bird/pigeon exposure, Grinding Department** — recurs in May 2025 and
+  January 2026, with the second occurrence involving direct material
+  contact rather than just proximity.
+- **Combustible dust accumulation, UPZ Line feed point** — recurs in June
+  2025 and March 2026, with the second occurrence noting a nearby ignition
+  source. A third occurrence (July 2026) is included as a live demo upload
+  file rather than seeded here — see `demo_uploads/README.md`.
 
 ## Compliance gaps (for testing Compliance Watch)
 
-- **Zone C, Jan 2026**: hot work and confined space permits overlap with
-  no documented cross-check (original example).
-- **Zone B, Oct 2025**: same pattern, different zone and date — hot work
-  and confined space permits overlap with no cross-check performed.
-- **Zone A, May 2025**: a clean pair, cross-check performed correctly, for
-  contrast.
+- **Storage Department, September 2025**: a clean permit pair — hot work
+  and confined space entry with a properly performed cross-check, included
+  for contrast.
+- **Grinding Department, February 2026**: only the hot work permit is
+  seeded here. Its overlapping confined space permit is a live demo upload
+  file, so the compliance gap is only discoverable once both are ingested
+  — see `demo_uploads/README.md`.
 
 ## Upload order and doc types
 
@@ -54,8 +52,7 @@ watch), S. Iyer (shift supervisor).
 | `regulatory_reference_summary.txt` | regulation |
 | All `hot_work_permit_*.txt`, `confined_space_permit_*.txt`, `electrical_isolation_permit_*.txt` | permit |
 | All `maintenance_log_*.txt` | maintenance_log |
-| All `incident_report_*.txt`, `near_miss_report_*.txt` | incident_report |
-| `sample_whatsapp_thread*.txt` | use the thread mining input box, not file upload |
+| All `near_miss_*.txt`, `incident_*.txt` | incident_report |
+| `sample_whatsapp_thread_*.txt` | use the thread mining input box, not file upload |
 
-For a broader test, I've also added excerpts from the Factories Act, 1948
-and OISD standards, both publicly available.
+These are composite, fictional records written for testing and demonstration purposes.

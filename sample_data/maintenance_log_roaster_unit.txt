@@ -1,0 +1,23 @@
+MAINTENANCE & INSPECTION LOG
+Equipment: Roaster Unit 1 (Processing Department)
+Facility: Reference Spice Plant
+
+--- ENTRY 1 ---
+Date: 2025-08-05
+Type: Routine Inspection
+Inspector: K. Verma (Maintenance Engineer)
+Findings: Roasting temperature showing minor drift from set point during extended runs. Within acceptable tolerance for now, logged for trend monitoring.
+
+--- ENTRY 2 ---
+Date: 2025-12-14
+Type: Routine Inspection
+Inspector: K. Verma
+Findings: Temperature drift trend continues, consistent with August observation. QC has not flagged any batch quality issues to date, but the underlying drift has not been corrected, only monitored.
+
+--- ENTRY 3 ---
+Date: 2026-03-01
+Type: Scheduled Maintenance
+Inspector: K. Verma
+Findings: Temperature sensor recalibrated. Root cause identified as sensor drift accumulating over repeated high-temperature cycles without interim recalibration. Recommend adding recalibration to the standard maintenance interval rather than reactive correction.
+
+Governing Standards: FSSAI food safety regulations, Factories Act 1948 Chapter IV

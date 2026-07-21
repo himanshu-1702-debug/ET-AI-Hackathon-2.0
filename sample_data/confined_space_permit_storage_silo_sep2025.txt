@@ -1,0 +1,21 @@
+CONFINED SPACE ENTRY PERMIT
+Permit No: CSP-2025-0071
+Facility: Reference Spice Plant, Storage Department
+
+Date Issued: 2025-09-09
+Valid From: 2025-09-09 08:00 To: 2025-09-09 11:00
+
+Task Description: Internal cleaning of the Hing storage silo ahead of new supplier stock intake.
+Entry Supervisor: R. Pillai (Storage Operator)
+
+Atmospheric Testing:
+- Oxygen level at entry: 20.9% (acceptable)
+- Dust concentration at entry: within acceptable range
+- No abnormal readings
+
+Entrants: 2 (storage department staff)
+Attendant: R. Pillai
+
+Cross-reference check with active Hot Work Permits in adjacent bays: PERFORMED — HWP-2025-0114 (2025-09-08) had already expired by the time this permit was issued; no overlapping hot work found for this window.
+
+Governing Standard: Factories Act 1948 Chapter IV, FSSAI hygiene regulations

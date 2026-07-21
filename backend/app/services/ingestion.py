@@ -13,10 +13,10 @@ from app.services.audit import log_event
 ENTITY_EXTRACTION_PROMPT = """You are an industrial document analyst. Extract structured entities
 and relationships from the following document text.
 
-Entity types to look for: equipment (tag numbers, machinery), personnel (names/roles),
-regulation (standard/act references like OISD, Factory Act sections), incident (any
+Entity types to look for: equipment (tag numbers, machinery, lines, storage systems),
+personnel (names/roles), regulation (standard/act/authority references), incident (any
 failure/near-miss/accident mentioned), procedure (named safety/maintenance procedures),
-date (key dates), location (zones/areas mentioned).
+date (key dates), location (departments/zones/areas mentioned).
 
 Relationship types: "governed_by" (equipment governed by regulation), "had_incident"
 (equipment had incident), "requires_procedure", "inspected_by", "located_in",
@@ -30,11 +30,11 @@ Document text:
 Return JSON exactly in this shape:
 {{
   "entities": [
-    {{"id": "equipment:compressor-b12", "type": "equipment", "label": "Compressor B-12"}},
+    {{"id": "equipment:example-tag", "type": "equipment", "label": "Example Equipment Name"}},
     ...
   ],
   "relationships": [
-    {{"source": "equipment:compressor-b12", "target": "regulation:oisd-std-105", "relation": "governed_by"}},
+    {{"source": "equipment:example-tag", "target": "regulation:example-standard", "relation": "governed_by"}},
     ...
   ]
 }}

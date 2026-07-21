@@ -1,0 +1,11 @@
+NEAR-MISS REPORT
+Report No: NM-2025-0089
+Facility: Reference Spice Plant, Grinding Department
+Date: 2025-06-23
+Reported by: Grinding Shift Team, filed by M. Reddy (Grinding Section Engineer)
+
+Description: Visible dust accumulation observed at the material feeding point of the UPZ Line, beyond what routine housekeeping typically clears. Ventilation airflow at this feeding point has been noted as insufficient in prior informal observations. No ignition source was present at the time; no incident occurred.
+
+Immediate Action: Housekeeping performed to clear accumulated dust. Ventilation adequacy at this feeding point flagged for review, since fine organic dust from grinding operations is a recognised combustible material.
+
+Classification: Near-miss, combustible dust accumulation — grinding feed point.

@@ -29,7 +29,7 @@ export default function RCA() {
         <label className="label">Equipment or failure description</label>
         <div style={{ display: 'flex', gap: 8 }}>
           <input className="input" value={query} onChange={(e) => setQuery(e.target.value)}
-            placeholder="e.g. Compressor B-12 sensor fluctuation" onKeyDown={(e) => e.key === 'Enter' && handleAnalyze()} />
+            placeholder="e.g. rack storage system deformation" onKeyDown={(e) => e.key === 'Enter' && handleAnalyze()} />
           <button className="btn btn-primary" onClick={handleAnalyze} disabled={loading || !query.trim()}>
             {loading ? 'Analyzing…' : 'Run RCA'}
           </button>

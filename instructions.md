@@ -116,7 +116,7 @@ You don't need to do this manually anymore — the backend automatically
 loads the full `sample_data/` corpus the first time it starts with a valid
 API key in place. This only happens once; if the knowledge graph already
 has data in it, startup skips seeding and starts normally. Give it a minute
-or two on that very first run, since it's running real extraction on ~19
+or two on that very first run, since it's running real extraction on ~20
 documents before the server finishes starting up.
 
 If you want to reload the sample data from scratch, use the "Reset demo
@@ -166,10 +166,11 @@ copy each time, and this won't come up.
 A few things worth trying once documents are loaded:
 
 - Ask the Copilot: "Was there any overlap between hot work and confined
-  space permits near Compressor B-12 in January?"
-- Run a Compliance check on "Compressor B-12" — it should catch the
-  overlapping permits.
-- Run RCA on "Compressor B-12 sensor fluctuation" — it should trace the
+  space permits in the Grinding Department in February 2026?"
+- Run a Compliance check on "Grinding Department" — it should catch the
+  overlapping permits once you've also uploaded the demo confined space
+  permit (see `demo_uploads/README.md`).
+- Run RCA on "rack storage system deformation" — it should trace the
   pattern across the maintenance log entries.
 
 More test questions are in `docs/OPERATIONS.md`.

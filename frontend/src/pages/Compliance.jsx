@@ -47,7 +47,7 @@ export default function Compliance() {
         <label className="label">Scope (equipment, zone, or permit reference)</label>
         <div style={{ display: 'flex', gap: 8 }}>
           <input className="input" value={scope} onChange={(e) => setScope(e.target.value)}
-            placeholder="e.g. Compressor B-12" onKeyDown={(e) => e.key === 'Enter' && handleCheck()} />
+            placeholder="e.g. Grinding Department" onKeyDown={(e) => e.key === 'Enter' && handleCheck()} />
           <button className="btn btn-primary" onClick={handleCheck} disabled={loading || !scope.trim()}>
             {loading === 'check' ? 'Checking…' : 'Check Compliance'}
           </button>

@@ -1,0 +1,11 @@
+NEAR-MISS REPORT
+Report No: NM-2025-0067
+Facility: Reference Spice Plant, Grinding Department
+Date: 2025-05-19
+Reported by: Grinding Shift Team, filed by T. Menon (Grinding Operator)
+
+Description: Pigeon activity observed near the open feeding area close to the New Lithotech Grinder. Birds were seen perching on overhead structure above the grinding floor, an open-sided area with no netting or barrier. No confirmed product contamination, but the exposure is a direct food-safety and GMP concern given the proximity to open material feed points.
+
+Immediate Action: Reported to Quality Control for awareness. No physical barrier installed at this time.
+
+Classification: Near-miss, food safety / GMP — bird exposure.

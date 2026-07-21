@@ -35,8 +35,12 @@ and audit log. Re-upload documents afterward.
 
 I use these to sanity-check the copilot after loading the sample documents:
 
-- What was the LEL reading at the time of entry for the confined space permit in Zone C?
-- Was there any overlap between hot work and confined space permits near Compressor B-12 in January?
-- Has the gas pressure sensor issue on Compressor B-12 happened more than once?
-- What is the maintenance history of Turbine A-45? (this one should come back
-  as "no information found" rather than a fabricated answer)
+- Has the rack storage system in the Storage Department had structural issues more than once?
+- Was there any overlap between hot work and confined space permits in the Grinding Department in February 2026?
+- Has the bird exposure issue near the Grinding Department happened more than once?
+- Is there a recurring dust accumulation problem at the UPZ Line feed point?
+- What is the maintenance history of Roaster Unit 2? (this one should
+  come back as "no information found" rather than a fabricated answer,
+  since only Roaster Unit 1 exists in the sample data)
+
+

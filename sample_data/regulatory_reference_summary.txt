@@ -1,28 +1,38 @@
 REGULATORY REFERENCE SUMMARY (Plant Compliance Team Internal Notes)
-Prepared as an internal quick-reference summary of applicable standards. For full legal text,
-refer to the official Factory Act 1948 and OISD standards documents (linked in the compliance
-document library).
+Prepared as an internal quick-reference summary of applicable standards for a spice
+processing and packaging facility. For full legal text, refer to the official FSSAI,
+Spice Board of India, and Factories Act documentation maintained by the compliance team.
 
-FACTORY ACT 1948 - CHAPTER IV (SAFETY) - Key Points Relevant to This Plant:
-- Employers must maintain effective safety provisions for hazardous processes, including
-  proper fencing of machinery, pressure vessel safety, and hazardous substance handling.
-- Confined space and hazardous area work requires documented precautions and supervision.
-- The Act empowers factory inspectors to require documentation and inspect any part of the
-  facility relevant to worker safety compliance.
+FSSAI (FOOD SAFETY AND STANDARDS AUTHORITY OF INDIA) — Key Points Relevant to This Plant:
+- Food business operators must maintain hygienic manufacturing conditions across storage,
+  processing, grinding, and packaging areas, including protection from pests, birds, and
+  contaminants at all open material handling points.
+- Temperature-sensitive processes such as roasting must be monitored and calibrated
+  regularly to ensure consistent product safety and quality.
+- Packaging lines must maintain enclosed or protected transfer points wherever product is
+  exposed between processing stages.
 
-OISD-STD-105 (WORK PERMIT SYSTEMS) - Internal Summary:
-- All hot work, confined space entry, and other high-risk activities require a documented,
-  time-bound permit with named authorizers.
-- Permit issuers are expected to check for overlapping high-risk activities in the same or
-  adjacent zones before authorization, since simultaneous hot work and confined space entry
-  in proximity is a recognized high-risk combination.
-- Gas testing before and during work is required for confined space entries in hydrocarbon
-  processing areas.
+SPICE BOARD OF INDIA — Quality Standards:
+- Spice Board guidelines cover quality parameters for whole and ground spice products,
+  including moisture content, foreign matter limits, and traceability of raw material
+  batches from intake through to final packaging.
+- FIFO (first-in-first-out) traceability is expected across raw material and packaging
+  material storage to avoid aged or obsolete stock reaching production.
 
-OISD-GDN-178 (GUIDANCE ON SIMULTANEOUS OPERATIONS):
-- Facilities are encouraged to maintain a simultaneous-operations (SIMOPS) register cross-
-  referencing all active permits in a given zone during a shift, to catch dangerous overlaps
-  before they occur, not just during post-incident review.
+FACTORIES ACT 1948 — CHAPTER IV (SAFETY) — Key Points Relevant to This Plant:
+- Employers must maintain effective safety provisions for hazardous processes and
+  structural elements, including racking and storage systems subject to load-bearing wear.
+- Confined space and hot work activities require documented precautions, supervision, and
+  cross-checking against other simultaneous high-risk operations in the same or adjacent
+  areas.
+
+PLANT COMBUSTIBLE DUST SAFETY GUIDELINE (internal, based on NFPA 61 principles):
+- Fine organic dust generated during spice grinding operations is a recognised combustible
+  material. Feeding points and grinding lines require adequate ventilation and regular
+  housekeeping to prevent dust accumulation.
+- Hot work or spark-generating activity in proximity to grinding areas requires verified
+  dust clearance, not a visual check alone, before work begins.
 
 This internal summary is provided for quick reference only and does not replace the full
-official regulatory text.
+official regulatory text maintained by FSSAI, the Spice Board of India, and the Factories
+Act, 1948.

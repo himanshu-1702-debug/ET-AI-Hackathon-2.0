@@ -1,0 +1,23 @@
+MAINTENANCE & INSPECTION LOG
+Equipment: Goods Lift, Grinding Section (shared by CW Grinding Line and Salt Grinding Line)
+Facility: Reference Spice Plant
+
+--- ENTRY 1 ---
+Date: 2025-06-20
+Type: Routine Inspection
+Inspector: M. Reddy (Grinding Section Engineer)
+Findings: Goods lift usage rate is high since it is the only vertical transport shared by both the CW Grinding Line (running near capacity) and the Salt Grinding Line (running at full capacity). Door mechanism showing early wear consistent with high cycle count.
+
+--- ENTRY 2 ---
+Date: 2025-11-08
+Type: Routine Inspection
+Inspector: M. Reddy
+Findings: Door mechanism wear has progressed. Lift usage log (informal, maintained by operators) suggests the lift is cycling significantly more often than its rated duty cycle, since it remains the single shared path for two high-utilization lines. No queuing or scheduling system exists to manage priority between the two lines.
+
+--- ENTRY 3 ---
+Date: 2026-02-11
+Type: Scheduled Maintenance
+Inspector: K. Verma (Maintenance Engineer)
+Findings: Door mechanism serviced ahead of failure based on prior wear trend. Recommend evaluating whether a scheduling or priority system between CW Line and Salt Line lift usage would reduce cycle count, since the underlying demand on the lift has not changed.
+
+Governing Standards: Factories Act 1948 Chapter IV

@@ -83,7 +83,7 @@ export default function TacitCapture() {
         <div className="bracket-panel">
           <label className="label">Area of expertise</label>
           <div style={{ display: 'flex', gap: 8 }}>
-            <input className="input" value={area} onChange={(e) => setArea(e.target.value)} placeholder="e.g. Compressor maintenance, Zone C" />
+            <input className="input" value={area} onChange={(e) => setArea(e.target.value)} placeholder="e.g. Grinding department operations, Storage handling" />
             <button className="btn btn-primary" onClick={handleStart} disabled={loading || !area.trim()}>
               {loading ? 'Starting…' : 'Start Interview'}
             </button>

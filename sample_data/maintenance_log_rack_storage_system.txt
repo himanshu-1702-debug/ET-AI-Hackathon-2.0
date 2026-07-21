@@ -1,0 +1,29 @@
+MAINTENANCE & INSPECTION LOG
+Equipment: Rack Storage System, Upper Levels (Storage Department)
+Facility: Reference Spice Plant
+
+--- ENTRY 1 ---
+Date: 2025-04-11
+Type: Routine Inspection
+Inspector: K. Verma (Maintenance Engineer)
+Findings: Minor deflection observed on beam sections at upper rack levels in the raw material storage bay. Consistent with heavy pallet loads (salt and high-density spice stock) being stored at these levels. Logged for monitoring, no immediate action taken.
+
+--- ENTRY 2 ---
+Date: 2025-08-19
+Type: Routine Inspection
+Inspector: K. Verma
+Findings: Beam deflection at the same rack section has increased since April. Upper levels remain in use for high-density pallets despite the earlier note. Recommend restricting upper-level storage to lighter material pending structural review.
+
+--- ENTRY 3 ---
+Date: 2025-12-02
+Type: Near-Miss Follow-up Inspection
+Inspector: A. Deshmukh (Plant Safety Officer)
+Findings: Visible bending confirmed on two adjacent beam sections, same rack row flagged in April and August. Operators have continued stacking pallets at floor level near this section as an informal workaround rather than using the upper racks, effectively taking capacity out of use without a formal review. A. Deshmukh noted: "This is the third time this section has been flagged — the underlying loading practice hasn't changed, only the workaround has."
+
+--- ENTRY 4 ---
+Date: 2026-03-27
+Type: Routine Inspection
+Inspector: K. Verma
+Findings: Beam deformation at the flagged section is now visually apparent without instrumentation. Two more sections nearby show early signs of the same pattern. Recommend a full structural assessment of the rack row rather than continued section-by-section monitoring.
+
+Governing Standards: Factories Act 1948 Chapter IV (Safety), FSSAI storage hygiene guidance

@@ -1,0 +1,13 @@
+INCIDENT REPORT
+Report No: INC-2025-0058
+Facility: Reference Spice Plant, Storage Department
+Date: 2025-07-14
+Reported by: Storage Shift Team, filed by S. Krishnan (Storage Shift Supervisor)
+
+Description: A raw material delivery at Unloading Bay 2 was partially exposed to unseasonal rain during unloading, since none of the four unloading points at the storage department have a covered canopy. A portion of the incoming packaging material was found damp and was quarantined pending Quality Control assessment.
+
+Findings: All four unloading bays remain uncovered. This is a recognised, standing exposure rather than an unusual event, since 12 to 15 trucks are received daily at these points regardless of weather.
+
+Immediate Action: Affected material quarantined and inspected. Recommend evaluating a covered canopy solution for the unloading bays.
+
+Classification: Incident, material exposure due to weather, no injury.

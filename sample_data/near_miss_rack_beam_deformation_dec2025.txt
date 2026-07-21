@@ -1,0 +1,13 @@
+NEAR-MISS REPORT
+Report No: NM-2025-0204
+Facility: Reference Spice Plant, Storage Department
+Date: 2025-12-02
+Reported by: Storage Shift Team, filed by A. Deshmukh (Plant Safety Officer)
+
+Description: Visible bending confirmed on the same rack section flagged in April (NM-2025-0031). Operators have been informally avoiding upper-level storage at this section by stacking pallets at floor level instead, without a formal change to storage procedure. No pallet fall, no injury.
+
+Immediate Action: Escalated to maintenance for structural follow-up (see maintenance log entry 2025-12-02).
+
+Note from reporting officer: This is the same section flagged eight months ago. The informal floor-stacking workaround suggests operators recognise the risk, but no formal review of the racking or loading practice has been initiated since the first report.
+
+Classification: Near-miss, structural — racking system, recurring.
