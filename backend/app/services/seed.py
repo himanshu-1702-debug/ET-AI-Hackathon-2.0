@@ -3,6 +3,7 @@ from pathlib import Path
 from app.core.config import settings
 from app.services import knowledge_graph as kg
 from app.services import ingestion
+from app.services.audit import log_event
 
 SAMPLE_DATA_DIR = settings.DATA_DIR.parent.parent.parent / "sample_data"
 
@@ -53,8 +54,9 @@ def run_seed_if_needed():
         if file_path.exists():
             try:
                 ingestion.ingest_document(str(file_path), doc_type, filename)
-            except Exception:
-                pass
+            except Exception as e:
+                log_event(feature="seed", action="seed_document_failed",
+                          detail={"filename": filename, "error": str(e)[:300]}, escalated=True)
 
     for filename in THREAD_SEED_FILES:
         file_path = SAMPLE_DATA_DIR / filename
@@ -62,5 +64,6 @@ def run_seed_if_needed():
             try:
                 text = file_path.read_text(errors="ignore")
                 ingestion.ingest_thread(text, filename)
-            except Exception:
-                pass
+            except Exception as e:
+                log_event(feature="seed", action="seed_thread_failed",
+                          detail={"filename": filename, "error": str(e)[:300]}, escalated=True)

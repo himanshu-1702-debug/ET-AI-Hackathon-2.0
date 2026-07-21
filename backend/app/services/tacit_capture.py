@@ -72,7 +72,11 @@ def finalize_capture(expertise_area: str, conversation_history: list[dict]) -> d
              "filename": f"tacit_capture_{expertise_area}", "category": c.get("category", "unknown")}
             for i, c in enumerate(captured)
         ]
-        vs.add_chunks(session_id, chunk_texts, metadatas)
+        try:
+            vs.add_chunks(session_id, chunk_texts, metadatas)
+        except Exception as e:
+            log_event(feature="tacit_capture", action="vector_store_write_failed",
+                      detail={"session_id": session_id, "error": str(e)[:300]}, escalated=True)
 
     for e in result.get("entities", []):
         kg.add_entity(entity_id=e["id"], entity_type=e["type"], label=e["label"],

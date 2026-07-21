@@ -1,3 +1,4 @@
+import re
 from app.core.llm import ask_llm_json
 from app.services import vector_store as vs
 from app.services import knowledge_graph as kg
@@ -31,13 +32,28 @@ Base every claim strictly on the provided evidence. If evidence is thin, say so 
 """
 
 
+def _find_seed_entities(query: str, limit: int = 5) -> list[dict]:
+    words = re.findall(r"[A-Za-z0-9\-]+", query)
+    candidates = []
+    seen_ids = set()
+    for w in words:
+        if len(w) < 3:
+            continue
+        matches = kg.search_nodes_by_label(w, limit=3)
+        for m in matches:
+            if m["id"] not in seen_ids:
+                candidates.append(m)
+                seen_ids.add(m["id"])
+    return candidates[:limit]
+
+
 def analyze_rca(equipment_query: str) -> dict:
     doc_hits = vs.search(equipment_query, top_k=8)
     doc_context = "\n\n".join(
         f"[{h['metadata'].get('filename', 'unknown')}]\n{h['text']}" for h in doc_hits
     ) or "(no matching documents found)"
 
-    seed_entities = kg.search_nodes_by_label(equipment_query, limit=3)
+    seed_entities = _find_seed_entities(equipment_query, limit=3)
     graph_facts = []
     for entity in seed_entities:
         hops = kg.get_neighbors(entity["id"], max_hops=2)

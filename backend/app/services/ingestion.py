@@ -102,7 +102,11 @@ def ingest_document(file_path, doc_type: str, original_filename: str) -> dict:
         {"source_doc": doc_id, "doc_type": doc_type, "chunk_index": i, "filename": original_filename}
         for i in range(len(chunks))
     ]
-    vs.add_chunks(doc_id, chunks, metadatas)
+    try:
+        vs.add_chunks(doc_id, chunks, metadatas)
+    except Exception as e:
+        log_event(feature="ingestion", action="vector_store_write_failed",
+                  detail={"doc_id": doc_id, "error": str(e)[:300]}, escalated=True)
 
     extraction = extract_entities_and_link(text, doc_id, doc_type)
 
@@ -224,7 +228,11 @@ def ingest_thread(text: str, source_label: str = "whatsapp_thread") -> dict:
              "filename": source_label, "knowledge_type": k.get("type", "unknown")}
             for i, k in enumerate(knowledge_items)
         ]
-        vs.add_chunks(doc_id, chunk_texts, metadatas)
+        try:
+            vs.add_chunks(doc_id, chunk_texts, metadatas)
+        except Exception as e:
+            log_event(feature="thread_mining", action="vector_store_write_failed",
+                      detail={"doc_id": doc_id, "error": str(e)[:300]}, escalated=True)
 
     for e in entities:
         kg.add_entity(entity_id=e["id"], entity_type=e["type"], label=e["label"],
