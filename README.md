@@ -41,4 +41,4 @@ understanding.
 - `sample_data/` — sample documents for testing
 - `docs/` — API reference and operations notes
 
-See `instructions.md` for setup steps.
+
