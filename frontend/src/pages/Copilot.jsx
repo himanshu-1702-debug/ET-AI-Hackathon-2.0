@@ -128,6 +128,9 @@ function MessageBubble({ message }) {
           {d.reasoning_hops > 0 && (
             <span className="pill pill-blue">{d.reasoning_hops} REASONING HOP{d.reasoning_hops > 1 ? 'S' : ''}</span>
           )}
+          {d.response_time_seconds != null && (
+            <span className="pill pill-muted mono">{d.response_time_seconds}s</span>
+          )}
         </div>
         <CitationList citations={d.citations} />
       </div>

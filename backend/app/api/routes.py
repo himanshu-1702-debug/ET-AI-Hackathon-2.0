@@ -1,5 +1,6 @@
 import shutil
 import uuid
+import time
 import traceback
 from pathlib import Path
 
@@ -30,6 +31,7 @@ job_queue.register_replayable("document_ingestion", ingestion.ingest_document)
 job_queue.register_replayable("pid_digitisation", ingestion.ingest_pid_drawing)
 job_queue.register_replayable("thread_mining", ingestion.ingest_thread)
 job_queue.register_replayable("pattern_scan", lessons_learned.mine_patterns)
+job_queue.register_replayable("routing", routing.route_finding)
 
 
 class LoginRequest(BaseModel):
@@ -133,7 +135,10 @@ def ingest_thread(req: ThreadIngestRequest):
 
 @router.post("/copilot/query")
 def copilot_query(req: QueryRequest):
-    return _handle_llm_errors(copilot.ask_copilot, req.question, req.max_hops, req.language)
+    start = time.time()
+    result = _handle_llm_errors(copilot.ask_copilot, req.question, req.max_hops, req.language)
+    result["response_time_seconds"] = round(time.time() - start, 2)
+    return result
 
 
 @router.post("/onboarding/generate-path")
@@ -148,10 +153,12 @@ def get_escalations(limit: int = 50):
 
 @router.post("/compliance/check")
 def check_compliance(req: ComplianceCheckRequest):
+    start = time.time()
     result = _handle_llm_errors(compliance.check_compliance, req.scope_query)
+    result["response_time_seconds"] = round(time.time() - start, 2)
     for gap in result.get("gaps_found", []):
         if gap.get("severity") == "high":
-            _handle_llm_errors(routing.route_finding, gap["description"], "compliance")
+            job_queue.enqueue("routing", routing.route_finding, gap["description"], "compliance", sla_seconds=15)
     return result
 
 
@@ -162,12 +169,14 @@ def evidence_package(req: EvidencePackageRequest):
 
 @router.post("/rca/analyze")
 def analyze_rca(req: RCARequest):
+    start = time.time()
     result = _handle_llm_errors(rca.analyze_rca, req.equipment_query)
+    result["response_time_seconds"] = round(time.time() - start, 2)
     if result.get("systemic_pattern_detected"):
-        _handle_llm_errors(
-            routing.route_finding,
+        job_queue.enqueue(
+            "routing", routing.route_finding,
             result.get("systemic_pattern_description", "Systemic pattern detected"),
-            "rca",
+            "rca", sla_seconds=15,
         )
     return result
 
@@ -192,10 +201,12 @@ def acknowledge(req: RoutingAckRequest, user: dict = Depends(require_permission(
 
 @router.post("/lessons-learned/scan")
 def scan_patterns(req: PatternMiningRequest):
+    start = time.time()
     result = _handle_llm_errors(lessons_learned.mine_patterns, req.focus_area)
+    result["response_time_seconds"] = round(time.time() - start, 2)
     for pattern in result.get("patterns_found", []):
         if pattern.get("risk_level") == "high":
-            _handle_llm_errors(routing.route_finding, pattern["pattern_description"], "lessons_learned")
+            job_queue.enqueue("routing", routing.route_finding, pattern["pattern_description"], "lessons_learned", sla_seconds=15)
     return result
 
 

@@ -42,6 +42,11 @@ export default function LessonsLearned() {
           <EmptyState eyebrow="No patterns found" title="Nothing systemic detected" description="Try ingesting more incident/near-miss records, or broaden the focus area." />
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {result.response_time_seconds != null && (
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <span className="pill pill-blue mono">Scanned in {result.response_time_seconds}s</span>
+              </div>
+            )}
             {result.patterns_found.map((p, i) => (
               <div key={i} className="bracket-panel" style={{ borderColor: p.risk_level === 'high' ? 'var(--signal-red)' : 'var(--line)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>

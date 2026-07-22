@@ -41,7 +41,12 @@ export default function RCA() {
       {result && !loading && (
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 16 }}>
           <div className="bracket-panel">
-            <span className="eyebrow">Probable Root Causes</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span className="eyebrow">Probable Root Causes</span>
+              {result.response_time_seconds != null && (
+                <span className="pill pill-blue mono">{result.response_time_seconds}s</span>
+              )}
+            </div>
             <ol style={{ margin: '10px 0 16px', paddingLeft: 20, fontSize: 13.5, lineHeight: 1.7 }}>
               {(result.probable_root_causes || []).map((c, i) => <li key={i}>{c}</li>)}
             </ol>

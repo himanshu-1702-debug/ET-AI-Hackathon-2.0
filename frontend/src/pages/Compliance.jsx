@@ -63,9 +63,14 @@ export default function Compliance() {
         <div className="bracket-panel" style={{ marginBottom: 16 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
             <span className="eyebrow">Compliance Status — {result.scope}</span>
-            <span className="pill" style={{ background: 'transparent', border: `1px solid ${statusInfo.color}`, color: statusInfo.color }}>
-              <span className="dot" style={{ background: statusInfo.color }} /> {statusInfo.label}
-            </span>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+              {result.response_time_seconds != null && (
+                <span className="pill pill-blue mono">{result.response_time_seconds}s</span>
+              )}
+              <span className="pill" style={{ background: 'transparent', border: `1px solid ${statusInfo.color}`, color: statusInfo.color }}>
+                <span className="dot" style={{ background: statusInfo.color }} /> {statusInfo.label}
+              </span>
+            </div>
           </div>
 
           {result.gaps_found.length === 0 ? (
